@@ -47,12 +47,13 @@ int _strcomp(char *str1, char *str2)
 	return (1);
 }
 
-/** _strcpy - copy const char * into char *
+/**
+ * _strcpy - copy const char * into char *
  * @dest: where to copy
  * @src: to copy
  * Return: char *
  */
-char* _strcpy(char *dest, const char *src)
+char *_strcpy(char *dest, const char *src)
 {
 	char *result = dest;
 

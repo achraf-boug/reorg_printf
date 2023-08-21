@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list argv;
 	int i = 0, len = 0;
-	char *output;
+	char *output = NULL;
 	char specifier[2] = "% ";
 
 	output = _strcpy(output, format);

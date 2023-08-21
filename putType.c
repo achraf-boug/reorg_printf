@@ -42,7 +42,7 @@ int putInteger(va_list argv)
 	int digits[10];
 
 	if (number == 0)
-		return _putchar('0');
+		return (_putchar('0'));
 
 	if (number < 0)
 	{
@@ -53,7 +53,7 @@ int putInteger(va_list argv)
 	while (number > 0)
 	{
 		digits[i] = number % 10;
-		number = number /10;
+		number = number / 10;
 		i++;
 	}
 
