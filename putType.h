@@ -6,7 +6,7 @@
 #include <stdarg.h>
 
 /**
- * struct sepecifiers - Struct specifiers
+ * struct specifiers - Struct specifiers
  *
  * @symbole: specifier
  * @f: function to execute
