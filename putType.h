@@ -6,6 +6,7 @@
 
 /**
  * struct sepecifiers - Struct specifiers
+ *
  * @symbole: specifier
  * @f: function to execute
  */

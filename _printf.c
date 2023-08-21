@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	char specifier[2] = "% ";
 
 	output = _strcpy(output, format);
+
 	if (output == NULL || _strcomp(output, "% "))
 		return (-1);
 
