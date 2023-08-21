@@ -9,14 +9,13 @@
 */
 void handler(char specifier[2], int *len, va_list argv)
 {
-	specifiers specs[] = {
-		{"%c", putCharacter}, {"%s", putString}, {"%%", _putchar},
+	specifiers specs[] = {{"%c", putCharacter}, {"%s", putString}, {"%%", _putchar},
 		{"%d", putInteger}, {"%i", putInteger}, {"%b", putBinary},
 		{"%u", NULL}, {"%o", NULL}, {"%x", NULL}, {"%X", NULL},
 		{"%S", NULL}, {"%p", NULL}, {NULL, NULL}};
 	int i = 0;
 
-	while (specs[i].symbole != NULL && !strcomp(specs[i], specifier))
+	while (specs[i].symbole != NULL && specs[i].f != NULL && !strcomp(specs[i], specifier))
 		i++;
 
 	if (specs[i].symbole == NULL)

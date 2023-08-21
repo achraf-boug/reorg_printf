@@ -7,7 +7,7 @@
 */
 int putCharacter(va_list argv)
 {
-	return (_putchar(va_arg(argv, char)));
+	return (_putchar(va_arg(argv, int)));
 }
 
 /**
@@ -41,11 +41,11 @@ int putInteger(va_list argv)
 	int number = va_arg(argv, int);
 
 	if (number < 0)
-		return (_putchar('-') + _putint(-number));
+		return (_putchar('-') + putInteger(-number));
 	else if (number < 10)
 		return (_putchar(number + '0'));
 	else
-		return (_putint(number / 10) + _putint(number % 10));
+		return (putInteger(number / 10) + putInteger(number % 10));
 }
 
 /**
@@ -59,7 +59,7 @@ int putBinary(va_list argv)
 	int len = 0;
 
 	if (number > 1)
-		len += _putbinary(number >> 1);
+		len += putBinary(number >> 1);
 	len += _putchar('0' + (number & 1));
 	return (len);
 }
