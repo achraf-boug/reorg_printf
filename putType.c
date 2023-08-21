@@ -61,5 +61,5 @@ int putBinary(va_list argv)
 	if (number > 1)
 		len += _putbinary(number >> 1);
 	len += _putchar('0' + (number & 1));
-	return len;
+	return (len);
 }

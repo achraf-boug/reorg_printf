@@ -12,11 +12,11 @@ int _printf(const char *format, ...)
 	int i = 0, len = 0;
 	char specifier[2] = "% ";
 
-	if (format == NULL || _strcomp(format,"% "))
+	if (format == NULL || _strcomp(format, "% "))
 		return (-1);
 
 	va_list(argv);
-	va_start(argv,format);
+	va_start(argv, format);
 
 	while (format[i] != '\0')
 	{
