@@ -2,6 +2,7 @@
 #define PUTTYPE
 
 #include "utils.h"
+#include <stdio.h>
 #include <stdarg.h>
 
 /**

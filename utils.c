@@ -50,23 +50,21 @@ int _strcomp(char *str1, char *str2)
 }
 
 /**
- * _strcpy - copy const char * into char *
- * @dest: where to copy
- * @src: to copy
- * Return: char *
+ * char *_strcpy - a function that copies the string pointed to by src
+ * @dest: copy to
+ * @src: copy from
+ * Return: string
  */
 char *_strcpy(char *dest, const char *src)
 {
-	char *result = dest;
+	int i;
 
-	while (*src != '\0')
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[i] = src[i];
 	}
-	*dest = '\0';
-	return (result);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /**

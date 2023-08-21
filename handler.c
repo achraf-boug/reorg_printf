@@ -13,8 +13,12 @@ void handler(char *specifier, int *len, va_list argv)
 		{"%d", putInteger}, {"%i", putInteger}, {"%b", putBinary}};
 	int i = 0;
 
-	while (!_strcomp(specs[i].symbole, specifier))
+	while (i < 5)
+	{
+		if (_strcomp(specs[i].symbole, specifier))
+			break;
 		i++;
+	}
 
 	if (i == 5)
 	{
