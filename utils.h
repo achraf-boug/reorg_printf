@@ -8,3 +8,4 @@ int _strlen(char *str);
 int _strcomp(char *str1, char *str2);
 
 #endif
+
