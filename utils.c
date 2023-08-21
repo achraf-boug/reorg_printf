@@ -7,7 +7,7 @@
 */
 int _putchar(char c)
 {
-    return (write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -17,9 +17,10 @@ int _putchar(char c)
 */
 int _strlen(char *str)
 {
-    int i;
-    for(i =0; str[i] != '\0'; i++);
-    return (i);
+	int i;
+
+	for(i =0; str[i] != '\0'; i++);
+	return (i);
 }
 
 /**
@@ -30,13 +31,16 @@ int _strlen(char *str)
 */
 int _strcomp(char *str1, char *str2)
 {
-    int i = 0, len;
+	int i = 0, len;
 
-    len = _strlen(str1);
-    if (_strlen(str2) != len)
-        return (0);
-    while (i <= len)
-        if (str1[i] != str2[i])
-            return (0);
-    return (1);
+	len = _strlen(str1);
+
+	if (_strlen(str2) != len)
+		return (0);
+
+	while (i <= len)
+		if (str1[i] != str2[i])
+			return (0);
+
+	return (1);
 }

@@ -1,3 +1,6 @@
+#ifndef PUTTYPE
+#define PUTTYPE
+
 #include "utils.h"
 #include <stdarg.h>
 
@@ -11,3 +14,5 @@ int putCharacter(va_list argv);
 int putString(va_list argv);
 int putInteger(va_list argv);
 int putBinary(va_list argv);
+
+#endif
