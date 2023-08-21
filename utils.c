@@ -46,3 +46,37 @@ int _strcomp(char *str1, char *str2)
 
 	return (1);
 }
+
+/** _strcpy - copy const char * into char *
+ * @dest: where to copy
+ * @src: to copy
+ * Return: char *
+ */
+char* _strcpy(char *dest, const char *src)
+{
+	char *result = dest;
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (result);
+}
+
+/**
+ * to_binary - converts unsigned int into binary
+ * @number: to be converted
+ * Return: Binary representation
+ */
+int to_binary(unsigned int number)
+{
+	int len = 0;
+
+	if (number > 1)
+		len += to_binary(number >> 1);
+	len += _putchar('0' + (number & 1));
+	return (len);
+}

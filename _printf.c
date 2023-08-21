@@ -10,23 +10,26 @@ int _printf(const char *format, ...)
 {
 	va_list argv;
 	int i = 0, len = 0;
+	char *output;
 	char specifier[2] = "% ";
 
-	if (format == NULL || _strcomp(format, "% "))
+	output = _strcpy(output, format);
+	if (output == NULL || _strcomp(output, "% "))
 		return (-1);
 
-	va_list(argv);
 	va_start(argv, format);
-
-	while (format[i] != '\0')
+	while (output[i] != '\0')
 	{
-		if (format[i] != '%')
-			len += _putchar(format[i]);
+		if (output[i] != '%')
+			len += _putchar(output[i]);
 		else
 		{
 			i++;
-			specifier[1] = format[i];
-			handler(specifier, &len, argv);
+			specifier[1] = output[i];
+			if (_strcomp(specifier, "%%"))
+				len += _putchar('%');
+			else
+				handler(specifier, &len, argv);
 		}
 	}
 

@@ -23,10 +23,9 @@ int putString(va_list argv)
 	if (s == NULL)
 		s = "(nil)";
 
-	while (*s != '\0')
+	while (s[len] != '\0')
 	{
-		len += _putchar(*s);
-		s++;
+		len += _putchar(s[len]);
 	}
 	return (len);
 }
@@ -39,13 +38,32 @@ int putString(va_list argv)
 int putInteger(va_list argv)
 {
 	int number = va_arg(argv, int);
+	int i = 0, len = 0;
+	int digits[10];
+
+	if (number == 0)
+		return _putchar('0');
 
 	if (number < 0)
-		return (_putchar('-') + putInteger(-number));
-	else if (number < 10)
-		return (_putchar(number + '0'));
-	else
-		return (putInteger(number / 10) + putInteger(number % 10));
+	{
+		len += _putchar('-');
+		number = -number;
+	}
+
+	while (number > 0)
+	{
+		digits[i] = number % 10;
+		number = number /10;
+		i++;
+	}
+
+	while (i > 0)
+	{
+		i--;
+		len += _putchar(digits[i] + '0');
+	}
+
+	return (len);
 }
 
 /**
@@ -56,10 +74,9 @@ int putInteger(va_list argv)
 int putBinary(va_list argv)
 {
 	unsigned int number = va_arg(argv, unsigned int);
-	int len = 0;
+	int len;
 
-	if (number > 1)
-		len += putBinary(number >> 1);
-	len += _putchar('0' + (number & 1));
+	len = to_binary(number);
+
 	return (len);
 }

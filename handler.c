@@ -7,19 +7,20 @@
  * @argv: arguments given by user
  * Return: Void
 */
+
+/* {"%u", NULL}, {"%o", NULL}, {"%x", NULL}, {"%X", NULL},
+                {"%S", NULL}, {"%p", NULL}}*/
 void handler(char specifier[2], int *len, va_list argv)
 {
-	specifiers specs[] = {{"%c", putCharacter}, {"%s", putString}, {"%%", _putchar},
-		{"%d", putInteger}, {"%i", putInteger}, {"%b", putBinary},
-		{"%u", NULL}, {"%o", NULL}, {"%x", NULL}, {"%X", NULL},
-		{"%S", NULL}, {"%p", NULL}, {NULL, NULL}};
+	specifiers specs[] = {{"%c", putCharacter}, {"%s", putString},
+		{"%d", putInteger}, {"%i", putInteger}, {"%b", putBinary}};
 	int i = 0;
 
-	while (specs[i].symbole != NULL && specs[i].f != NULL && !strcomp(specs[i], specifier))
+	while (!_strcomp(specs[i].symbole, specifier))
 		i++;
 
 	if (specs[i].symbole == NULL)
-		(*len) += _putString(specifier);
+		(*len) += putString(specifier);
 	else
 		(*len) += specs[i].f(argv);
 }

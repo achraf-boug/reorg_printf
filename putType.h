@@ -7,7 +7,7 @@
 typedef struct specifiers
 {
 	char symbole[2];
-	int (*f)();
+	int (*f)(va_list);
 } specifiers;
 
 int putCharacter(va_list argv);
