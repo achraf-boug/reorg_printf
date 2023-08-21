@@ -20,6 +20,6 @@ void handler(char *specifier, int *len, va_list argv)
 	{
 		(*len) += _putchar(specifier[0]);
 		(*len) += _putchar(specifier[1]);
-	}else
+	} else
 		(*len) += specs[i].f(argv);
 }

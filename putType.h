@@ -4,6 +4,11 @@
 #include "utils.h"
 #include <stdarg.h>
 
+/**
+ * struct sepecifiers - Struct specifiers
+ * @symbole: specifier
+ * @f: function to execute
+ */
 typedef struct specifiers
 {
 	char symbole[2];
